@@ -1,0 +1,52 @@
+<div class="currency-converter">
+  <h2>Currency Converter</h2>
+
+  <div class="converter-form">
+    <label for="amount">Amount:</label>
+    <input
+      type="text"
+      id="amount"
+      [(ngModel)]="amount"
+      (input)="onAmountChange($event)"
+      placeholder="Enter amount"
+    />
+
+    <label for="fromCurrency">From:</label>
+    <select [(ngModel)]="fromCurrency" id="fromCurrency">
+      <option *ngFor="let currency of currencies" [value]="currency">
+        {{ currency }}
+        <!-- Only display the currency symbol -->
+      </option>
+    </select>
+
+    <label for="toCurrency">To:</label>
+    <select [(ngModel)]="toCurrency" id="toCurrency">
+      <option *ngFor="let currency of currencies" [value]="currency">
+        {{ currency }}
+        <!-- Only display the currency symbol -->
+      </option>
+    </select>
+
+    <div class="d-flex">
+      <button (click)="onConvertButtonClick()">Convert</button>
+      <button (click)="swapCurrencies()">Swap</button>
+      <button
+        class="btn deratils-btn"
+        [routerLink]="['/details', fromCurrency, toCurrency]"
+      >
+        View Details 
+      </button>
+    </div>
+  </div>
+
+  <!-- Display converted amount when available -->
+  <div *ngIf="convertedAmount !== null" class="conversion-result">
+    <label for="convertedAmount">Converted Amount:</label>
+    <input
+      type="text"
+      id="convertedAmount"
+      [value]="convertedAmount"
+      readonly
+    />
+  </div>
+</div>

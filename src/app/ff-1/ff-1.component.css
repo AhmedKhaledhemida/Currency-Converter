@@ -1,0 +1,116 @@
+/* Basic styling for the container */
+.currency-converter {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.fromCurrency {
+  padding-top: 20px;
+}
+.toCurrency {
+  padding-top: 20px;
+}
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Styling for form inputs and select elements */
+input,
+select,
+button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+button {
+  background-color: #315c86;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+button:hover {
+  background-color: #173049;
+  color: white;
+}
+
+/* Styling for the converted amount section */
+.converted-result {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.currency-selection {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.currency-selection select {
+  width: 48%;
+}
+
+/* Swap button alignment */
+button {
+  width: 48%;
+  margin: 10px auto;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .currency-converter {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  /* Stack the currency selection dropdowns on smaller screens */
+  .currency-selection {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .currency-selection select {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .converted-result {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .currency-converter {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  .currency-selection select,
+  button {
+    width: 100%;
+  }
+
+  .converted-result {
+    font-size: 14px;
+  }
+}

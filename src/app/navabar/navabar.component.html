@@ -1,0 +1,33 @@
+<nav class="navbar">
+  <div class="navbar-logo">
+    <a routerLink="/"
+      ><img src="../../assets/logo3.png" alt="Logo" class="logo w-100"
+    /></a>
+  </div>
+  <div class="navbar-links">
+    <a routerLink="/" class="nav-link" (click)="toggleNav()">Home</a>
+    <a routerLink="/ff1" class="nav-link" (click)="toggleNav()"
+      >Currency Converter</a
+    >
+    <a routerLink="/ff3" class="nav-link" (click)="toggleNav()"
+      >Details Currency</a
+    >
+    <a routerLink="/usd" class="nav-link">USD Details</a>
+    <a routerLink="/eyr" class="nav-link">EUR Details</a>
+  </div>
+  <button class="navbar-toggle" (click)="toggleNav()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+</nav>
+<div class="navbar-links-responsive" *ngIf="isNavOpen">
+  <a routerLink="/" class="nav-link" (click)="toggleNav()">Home</a>
+  <a routerLink="/ff1" class="nav-link" (click)="toggleNav()"
+    >Currency Converter</a
+  >
+  <a routerLink="/ff3" class="nav-link" (click)="toggleNav()"
+    >Details Currency</a
+  >
+  <a routerLink="/contact" class="nav-link" (click)="toggleNav()">Contact</a>
+</div>

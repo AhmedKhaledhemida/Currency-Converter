@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://api.apilayer.com",
+    "changeOrigin": true,
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

@@ -1,0 +1,76 @@
+/* currency-converter.component.css */
+.converter {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  input {
+    padding: 8px;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .conversion-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .conversion-table th,
+  .conversion-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .conversion-table th {
+    background-color: #f3f3f3;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 600px) {
+    .conversion-table thead {
+      display: none;
+    }
+  
+    .conversion-table tr {
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    .conversion-table td {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+      border: none;
+      border-bottom: 1px solid #ddd;
+      font-size: 0.9rem;
+    }
+  
+    .conversion-table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-right: 10px;
+    }
+  }
+  

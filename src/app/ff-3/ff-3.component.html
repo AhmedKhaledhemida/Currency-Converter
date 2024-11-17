@@ -1,0 +1,51 @@
+<div class="currency-converter">
+  <div class="header">
+    <h2 class="text-center">Currency Converter</h2>
+    <div class="btn1">
+      <a routerLink="/">
+        <button class="back-btn">
+          <i class="fa-solid fa-arrow-left "></i> back
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <div class="converter-form">
+    <label for="amount">Amount:</label>
+    <input
+      type="text"
+      id="amount"
+      [(ngModel)]="amount"
+      (input)="onAmountChange($event)"
+      placeholder="Enter amount"
+    />
+
+    <label for="fromCurrency">From:</label>
+    <select [(ngModel)]="fromCurrency" id="fromCurrency" disabled>
+      <option *ngFor="let currency of currencies" [value]="currency">
+        {{ currencyNames[currency] || currency }}
+      </option>
+    </select>
+
+    <label for="toCurrency">To:</label>
+    <select [(ngModel)]="toCurrency" id="toCurrency">
+      <option *ngFor="let currency of currencies" [value]="currency">
+        {{ currencyNames[currency] || currency }}
+      </option>
+    </select>
+
+    <button (click)="onConvertButtonClick()">Convert</button>
+    <button (click)="swapCurrencies()">Swap</button>
+  </div>
+
+  <div *ngIf="convertedAmount !== null" class="conversion-result">
+    <label for="convertedAmount">Converted Amount:</label>
+    <input
+      type="text"
+      id="convertedAmount"
+      [value]="convertedAmount"
+      readonly
+    />
+  </div>
+</div>
+<!-- </div> -->

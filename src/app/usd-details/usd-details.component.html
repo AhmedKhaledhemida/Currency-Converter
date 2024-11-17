@@ -1,0 +1,25 @@
+<!-- currency-converter.component.html -->
+<div class="converter">
+    <h2>Currency Conversion from {{ baseCurrency }}</h2>
+    
+    <label>Amount:</label>
+    <input type="number" [(ngModel)]="amount" (input)="convertCurrencies()" placeholder="Enter amount" />
+  
+    <table *ngIf="conversionRates" class="conversion-table">
+      <thead>
+        <tr>
+          <th>Currency</th>
+          <th>Full Name</th>
+          <th>Converted Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let currency of getCurrencies()">
+          <td>{{ currency }}</td>
+          <td>{{ symbols[currency] }}</td>
+          <td>{{ (conversionRates[currency] * amount) | number:'1.2-2' }} {{ currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
